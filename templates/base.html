@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <title>BelikovCinema</title>
+    {% block script %}{% endblock %}
+</head>
+<body>
+    <header>
+        <div style="float: right;">
+            {% if session.get('login') %}
+                <span>Вы вошли как {{ session['login'] }}!</span>
+                <a href="{{ url_for('logout') }}" class="block">Выйти</a>
+                <a href="{{ url_for('delete_account') }}" class="block">Удалить аккаунт</a>
+            {% endif %}
+        </div>
+    </header>
+    <main>
+        {% block main %}
+        
+        {% endblock %}
+    </main>
+    <footer>
+        Беликов Вадим, группа ФБИ-24
+    </footer>
+</body>
+</html>

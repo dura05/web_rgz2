@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block main %}
+<h1>Управление сеансами</h1>
+
+<h2>Добавить сеанс</h2>
+<form action="/admin/add_film" method="post">
+    <label for="film_name">Название фильма:</label>
+    <input type="text" id="film_name" name="film_name" required><br><br>
+
+    <label for="date">Дата:</label>
+    <input type="date" id="date" name="date" required><br><br>
+
+    <label for="time">Время:</label>
+    <input type="time" id="time" name="time" required><br><br>
+
+    <button type="submit">Добавить сеанс</button>
+</form>
+
+<h2>Список сеансов</h2>
+<ul>
+    {% for film in films %}
+        <li>
+            {{ film['film_name'] }} - {{ film['date'] }} {{ film['time'] }}
+            <form action="/admin/delete_film/{{ film['id'] }}" method="post" style="display:inline;">
+                <button type="submit">Удалить сеанс</button>
+            </form>
+            <a href="{{ url_for('film_details', film_id=film['id']) }}">Подробнее</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

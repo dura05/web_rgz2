@@ -1,0 +1,165 @@
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #230738;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2 {
+    color: white;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(199, 197, 197);
+}
+
+button {
+    background-color: #230738;
+    color: white;
+    border: 1px solid grey;
+    padding: 5px 10px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+button:hover {
+    background-color: rgb(192, 192, 192);
+    color: black;
+}
+
+input[type="text"], input[type="password"], input[type="number"], input[type="date"], input[type="time"] {
+    padding: 10px;
+    margin: auto;
+    border: 1px solid #8e24aa;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 80%;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #230738;
+    color: white;
+    border: 1px solid grey;
+    padding: 10px 20px;
+    margin: 5px 0;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #6a1b9a;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    background-color: #e1bee7;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+ul li:hover {
+    background-color: #ce93d8;
+}
+
+/* Стили для мест */
+.seat-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.seat {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 50px;
+    height: 70px;
+    margin: 5px;
+    text-align: center;
+    border: 1px solid #8e24aa;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+}
+
+.seat.occupied {
+    background-color: #4a148c;
+    color: white;
+}
+
+.seat.free {
+    background-color: white;
+    color: #4a148c;
+}
+
+.seat:hover {
+    background-color: #ce93d8;
+}
+
+.seat div {
+    margin: 2px 0;
+}
+
+/* Сообщение об ошибке */
+#error-message {
+    color: #d32f2f;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* Статистика мест */
+#seat-stats {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 20px 0;
+    color: #6a1b9a;
+}
+
+/* Регистрация и авторизация */
+.av_reg {
+    margin: 20px 0;
+}
+
+.av_reg a {
+    margin-right: 10px;
+    padding: 10px 20px;
+    background-color: #230738;
+    color: white;
+    border: 1px solid grey;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.av_reg a:hover {
+    background-color: #6a1b9a;
+}
+
+/* Подвал */
+footer {
+    border-top: 1px solid gray;
+}
