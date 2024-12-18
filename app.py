@@ -308,7 +308,7 @@ def api():
         if current_app.config['DB_TYPE'] == 'postgres':
             cur.execute("SELECT * FROM bookings WHERE film_id=%s AND seat_number=%s;", (session['film_id'], seat_number))
         else:
-            cur.execute("SELECT * FROM bookings WHERE film_id=%s AND seat_number=?;", (session['film_id'], seat_number))
+            cur.execute("SELECT * FROM bookings WHERE film_id=? AND seat_number=?;", (session['film_id'], seat_number))
 
         if cur.fetchone():
             db_close(conn, cur)
